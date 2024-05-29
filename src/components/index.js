@@ -22,6 +22,5 @@ export {
   CanvasLoader,
   EarthCanvas, 
   BallCanvas, 
-  // ComputersCanvas, 
   StarsCanvas
 };

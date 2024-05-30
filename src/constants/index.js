@@ -3,7 +3,7 @@ import {
   backend,
   creator,
   web,
-  javascript,
+  // javascript,
   html,
   css,
   reactjs,

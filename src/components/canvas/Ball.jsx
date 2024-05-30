@@ -1,65 +1,81 @@
-// 
-import React, { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import {
-  Decal,
-  Float,
-  OrbitControls,
-  Preload,
-  useTexture,
-} from "@react-three/drei";
-import CanvasLoader from "../Loader";
+import { cn } from "../../utils/Skill";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
-const Ball = (props) => {
-  const [decal, error] = useTexture([props.imgUrl]);
-
-  if (error) {
-    console.error("Error loading texture:", error);
-    return null;
-  }
+export const HoverEffect = ({ items, className }) => {
+  let [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      <ambientLight intensity={0.25} />
-      <directionalLight position={[10, 10, 10]} />
-      <mesh castShadow receiveShadow scale={2.75}>
-        <icosahedronGeometry args={[1, 1]} />
-        <meshStandardMaterial
-          color="#fff8eb"
-          polygonOffset
-          polygonOffsetFactor={-5}
-          flatShading
-        />
-        {decal && (
-          <Decal
-            position={[0, 0, 1]}
-            rotation={[2 * Math.PI, 0, 6.25]}
-            scale={1}
-            map={decal}
-            flatShading
-          />
-        )}
-      </mesh>
-     
-    </Float>
-  );
-};
-
-const BallCanvas = ({ icon }) => {
-  return (
-    <Canvas
-      frameloop="demand"
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+    <div
+      className={cn(
+        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10",
+        className
+      )}
     >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
-        <Ball imgUrl={icon} />
-      </Suspense>
-      
-      <Preload all />
-    </Canvas>
+      {items.map((item, idx) => (
+        <a
+          href={item?.link}
+          key={item?.link}
+          className="relative group block p-2 h-full w-full"
+          onMouseEnter={() => setHoveredIndex(idx)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          <AnimatePresence>
+            {hoveredIndex === idx && (
+              <motion.span
+                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl"
+                layoutId="hoverBackground"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 0.15 } }}
+                exit={{
+                  opacity: 0,
+                  transition: { duration: 0.15, delay: 0.2 },
+                }}
+              />
+            )}
+          </AnimatePresence>
+          <Card>
+            <CardTitle>{item.title}</CardTitle>
+            <CardDescription>{item.description}</CardDescription>
+          </Card>
+        </a>
+      ))}
+    </div>
   );
 };
 
-export default BallCanvas;
+export const Card = ({ className, children }) => {
+  return (
+    <div
+      className={cn(
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        className
+      )}
+    >
+      <div className="relative z-50">
+        <div className="p-4">{children}</div>
+      </div>
+    </div>
+  );
+};
+
+export const CardTitle = ({ className, children }) => {
+  return (
+    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+      {children}
+    </h4>
+  );
+};
+
+export const CardDescription = ({ className, children }) => {
+  return (
+    <p
+      className={cn(
+        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        className
+      )}
+    >
+      {children}
+    </p>
+  );
+};

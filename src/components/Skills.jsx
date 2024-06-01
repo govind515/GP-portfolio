@@ -1,4 +1,16 @@
-import { HoverEffect } from "./canvas/Ball";
+import {HoverEffect}  from "./canvas/Ball";
+
+import {
+  SiGit,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiReact,
+  SiRedux,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiMongodb,
+} from "react-icons/si";
 
 export function CardHoverEffectDemo() {
   return (
@@ -10,39 +22,39 @@ export function CardHoverEffectDemo() {
 
 export const projects = [
   {
-    title: "Stripe",
-    description:
-      "A technology company that builds economic infrastructure for the internet.",
-    link: "https://stripe.com",
+    title: "HTML5",
+    icon: SiHtml5,
   },
   {
-    title: "Netflix",
-    description:
-      "A streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
-    link: "https://netflix.com",
+    title: "CSS",
+    icon: SiCss3,
   },
   {
-    title: "Google",
-    description:
-      "A multinational technology company that specializes in Internet-related services and products.",
-    link: "https://google.com",
+    title: "JavaScript",
+    icon: SiJavascript,
   },
   {
-    title: "Meta",
-    description:
-      "A technology company that focuses on building products that advance Facebook's mission of bringing the world closer together.",
-    link: "https://meta.com",
+    title: "React",
+    icon: SiReact,
   },
   {
-    title: "Amazon",
-    description:
-      "A multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
-    link: "https://amazon.com",
+    title: "Redux",
+    icon: SiRedux,
   },
   {
-    title: "Microsoft",
-    description:
-      "A multinational technology company that develops, manufactures, licenses, supports, and sells computer software, consumer electronics, personal computers, and related services.",
-    link: "https://microsoft.com",
+    title: "Tailwindcss",
+    icon: SiTailwindcss,
+  },
+  {
+    title: "NextJs",
+    icon: SiNextdotjs,
+  },
+  {
+    title: "MongoDB",
+    icon: SiMongodb,
+  },
+  {
+    title: "Git",
+    icon: SiGit,
   },
 ];

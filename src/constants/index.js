@@ -1,25 +1,17 @@
-import {
-  backend,
-  creator,
-  web,
-  meta,
-  carrent,
-  jobit,
-  tripguide,
-} from "../assets";
+import { backend, creator, web, Almabetter,Educator, moviepeek ,diceGame,resumebuilder} from "../assets";
 
 export const navLinks = [
   {
     id: "about",
-    title: "About",
+    title: "About👨🏻‍💻",
   },
   {
     id: "work",
-    title: "Work",
+    title: "Work✍🏻",
   },
   {
     id: "contact",
-    title: "Contact",
+    title: "Contact📧",
   },
 ];
 
@@ -43,7 +35,7 @@ const experiences = [
   {
     title: "Full stack Developer",
     company_name: "Almabetter",
-    icon: meta,
+    icon: Almabetter,
     iconBg: "#E6DEDD",
     date: "Jan 2023 - may-2024",
     points: [
@@ -57,7 +49,7 @@ const experiences = [
   {
     title: "Educator",
     company_name: "Govind Parihar",
-    icon: meta,
+    icon: Educator,
     iconBg: "#E6DEDD",
     date: "September 2022 - Present",
     points: [
@@ -81,15 +73,19 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "MUI",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Redux Toolkit",
         color: "pink-text-gradient",
       },
+      {
+        name: "React Hook From",
+        color: "blue-text-gradient",
+      },
     ],
-    image: carrent,
+    image: resumebuilder,
     source_code_link: "https://github.com/",
   },
   {
@@ -102,15 +98,23 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "JavaScript",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "css",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "HTML5",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Tailwind CSS",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: diceGame,
     source_code_link: "https://github.com/",
   },
   {
@@ -119,19 +123,39 @@ const projects = [
       "At the heart of Popcorn Peek is the drive to provide users with a comprehensive and engaging platform to explore entertainment content.",
     tags: [
       {
-        name: "nextjs",
+        name: "JavaScritp",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "DSA",
         color: "green-text-gradient",
       },
       {
         name: "css",
         color: "pink-text-gradient",
       },
+      {
+        name: "React.Js",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Express.Js",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Node.Js",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "Bootstrap & React Bootstrap",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "API",
+        color: "green-text-gradient",
+      },
     ],
-    image: tripguide,
+    image: moviepeek,
     source_code_link: "https://github.com/",
   },
 ];

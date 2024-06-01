@@ -10,11 +10,11 @@ const Hero = () => {
    useEffect(() => {
      const options = {
        strings: [
-         "Full Stack Web Developer. ",
-         "Consistence Learner.",
-         "Software Developer. ",
-         "Problem Solver.",
-         "Programmar. ",
+         "Full Stack Web Developer 👨🏻‍💻. ",
+         "Consistence Learner 🎯.",
+         "Software Developer 💻⚙️. ",
+         "Problem Solver 🕵🏻‍♂️.",
+         "Programmar 👈. ",
        ],
        typeSpeed: 50,
        backSpeed: 50,

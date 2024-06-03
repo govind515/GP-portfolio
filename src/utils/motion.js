@@ -1,3 +1,4 @@
+// Variant for animating text elements
 export const textVariant = (delay) => {
   return {
     hidden: {
@@ -16,6 +17,7 @@ export const textVariant = (delay) => {
   };
 };
 
+// Variant for fading in elements
 export const fadeIn = (direction, type, delay, duration) => {
   return {
     hidden: {
@@ -37,6 +39,7 @@ export const fadeIn = (direction, type, delay, duration) => {
   };
 };
 
+// Variant for zooming in elements
 export const zoomIn = (delay, duration) => {
   return {
     hidden: {
@@ -56,6 +59,7 @@ export const zoomIn = (delay, duration) => {
   };
 };
 
+// Variant for sliding in elements
 export const slideIn = (direction, type, delay, duration) => {
   return {
     hidden: {
@@ -75,6 +79,7 @@ export const slideIn = (direction, type, delay, duration) => {
   };
 };
 
+// Variant for staggering children elements
 export const staggerContainer = (staggerChildren, delayChildren) => {
   return {
     hidden: {},

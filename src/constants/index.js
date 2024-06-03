@@ -1,5 +1,16 @@
-import { backend, creator, web, Almabetter,Educator, moviepeek ,diceGame,resumebuilder} from "../assets";
+// Importing assets for navigation icons
+import {
+  backend,
+  creator,
+  web,
+  Almabetter,
+  Educator,
+  moviepeek,
+  diceGame,
+  resumebuilder,
+} from "../assets";
 
+// Array of navigation links
 export const navLinks = [
   {
     id: "about",
@@ -15,12 +26,12 @@ export const navLinks = [
   },
 ];
 
+// Array of services
 const services = [
   {
     title: "Web Developer",
     icon: web,
   },
-
   {
     title: "Backend Developer",
     icon: backend,
@@ -31,6 +42,7 @@ const services = [
   },
 ];
 
+// Array of experiences
 const experiences = [
   {
     title: "Full stack Developer",
@@ -62,6 +74,7 @@ const experiences = [
   },
 ];
 
+// Array of projects
 const projects = [
   {
     name: "Resume Builder",
@@ -160,4 +173,4 @@ const projects = [
   },
 ];
 
-export { services, experiences,  projects };
+export { services, experiences, projects }; // Exporting services, experiences, and projects arrays
